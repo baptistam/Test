@@ -1,3 +1,10 @@
 <project name="Best Global Brands" basedir=".">
+  
+  <target name="test">
+        <echo message="Running unit tests with PHPUnit" />
+        <exec executable="PHPUnit3.7" failonerror="true">
+            <arg value="tests/"/>
+        </exec>
+    </target>
 
 </project>
