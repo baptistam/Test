@@ -1,10 +1,13 @@
-<project name="Best Global Brands" basedir=".">
-  
-  <target name="test">
-        <echo message="Running unit tests with PHPUnit" />
-        <exec executable="PHPUnit3.7" failonerror="true">
-            <arg value="tests/"/>
+<project name="Best Global Brands" default="build">
+    <target name="clean">
+        <delete dir="${basedir}/build" />
+    </target>
+ 
+    <target name="phpunit">
+        <exec dir="${basedir}/tests" executable="phpunit" failonerror="true">
+            <arg line="--log-junit ${basedir}/build/logs/phpunit.xml" />
         </exec>
     </target>
-
+ 
+     <target name="build" depends="clean,phpunit" />
 </project>
