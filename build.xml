@@ -1,4 +1,8 @@
 <project name="Best Global Brands" default="build">
+    <target name="prepare">
+        <mkdir dir="${basedir}/build/logs" />
+    </target>
+    
     <target name="clean">
         <delete dir="${basedir}/build" />
     </target>
@@ -9,5 +13,5 @@
         </exec>
     </target>
  
-     <target name="build" depends="clean,phpunit" />
+     <target name="build" depends="clean,prepare,phpunit" />
 </project>
