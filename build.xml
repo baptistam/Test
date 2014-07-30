@@ -7,5 +7,5 @@
         <mkdir dir="${basedir}/build/logs" />
     </target>
  
-     <target name="build" depends="clean,prepare,phpunit" />
+     <target name="build" depends="clean,prepare" />
 </project>
